@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="520" viewBox="0 0 720 520" role="img" aria-labelledby="title desc">
+  <title id="title">Dancing modular robot arm</title>
+  <desc id="desc">A dark gray multi-joint robot arm that loops through a playful waving dance.</desc>
+
+  <defs>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#50565d"/>
+      <stop offset="45%" stop-color="#31363c"/>
+      <stop offset="100%" stop-color="#1f2429"/>
+    </linearGradient>
+    <linearGradient id="metal2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#24292f"/>
+      <stop offset="50%" stop-color="#4a5057"/>
+      <stop offset="100%" stop-color="#23282e"/>
+    </linearGradient>
+    <radialGradient id="joint" cx="38%" cy="28%">
+      <stop offset="0%" stop-color="#626970"/>
+      <stop offset="55%" stop-color="#3e444a"/>
+      <stop offset="100%" stop-color="#252a2f"/>
+    </radialGradient>
+    <filter id="softShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+      <feOffset dx="0" dy="7" result="off"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.26"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- subtle floor shadow -->
+  <ellipse cx="360" cy="474" rx="116" ry="18" fill="#000" opacity=".16"/>
+
+  <!-- Base -->
+  <g filter="url(#softShadow)">
+    <ellipse cx="360" cy="440" rx="78" ry="18" fill="#1e2328" stroke="#11161a" stroke-width="4"/>
+    <rect x="291" y="389" width="138" height="51" rx="18" fill="url(#metal)" stroke="#151a1f" stroke-width="4"/>
+    <ellipse cx="360" cy="389" rx="69" ry="17" fill="#474d53" stroke="#151a1f" stroke-width="4"/>
+    <ellipse cx="360" cy="389" rx="55" ry="12" fill="#2d3237" stroke="#171c20" stroke-width="3"/>
+    <rect x="324" y="349" width="72" height="42" rx="18" fill="url(#metal2)" stroke="#151a1f" stroke-width="4"/>
+    <ellipse cx="360" cy="349" rx="36" ry="11" fill="#4a5057" stroke="#151a1f" stroke-width="4"/>
+    <circle cx="309" cy="420" r="4" fill="#171b20"/>
+    <circle cx="411" cy="420" r="4" fill="#171b20"/>
+    <circle cx="327" cy="432" r="4" fill="#171b20"/>
+    <circle cx="393" cy="432" r="4" fill="#171b20"/>
+  </g>
+
+  <!-- animated shoulder assembly -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate"
+      values="-18 360 350; 18 360 350; -12 360 350; 24 360 350; -18 360 350"
+      keyTimes="0; .24; .48; .74; 1" dur="6s" repeatCount="indefinite"/>
+
+    <!-- shoulder joint -->
+    <circle cx="360" cy="350" r="46" fill="url(#joint)" stroke="#14191e" stroke-width="5"/>
+    <circle cx="360" cy="350" r="32" fill="#252b30" stroke="#0f1418" stroke-width="4"/>
+    <path d="M337 330 A31 31 0 0 1 382 327" fill="none" stroke="#7ad7ff" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+
+    <!-- upper arm link -->
+    <rect x="332" y="239" width="56" height="111" rx="23" fill="url(#metal)" stroke="#151a1f" stroke-width="5"/>
+    <rect x="341" y="254" width="38" height="82" rx="15" fill="#33393f" opacity=".9"/>
+    <rect x="351" y="276" width="18" height="7" rx="3.5" fill="#151a1f"/>
+    <rect x="351" y="297" width="18" height="7" rx="3.5" fill="#151a1f"/>
+
+    <!-- elbow and everything downstream -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate"
+        values="30 360 239; -42 360 239; 38 360 239; -28 360 239; 30 360 239"
+        keyTimes="0; .24; .48; .74; 1" dur="6s" repeatCount="indefinite"/>
+
+      <circle cx="360" cy="239" r="41" fill="url(#joint)" stroke="#14191e" stroke-width="5"/>
+      <circle cx="360" cy="239" r="28" fill="#252b30" stroke="#11161a" stroke-width="4"/>
+      <circle cx="360" cy="239" r="7" fill="#10151a"/>
+
+      <!-- lower arm -->
+      <rect x="335" y="152" width="50" height="87" rx="22" fill="url(#metal2)" stroke="#151a1f" stroke-width="5"/>
+      <rect x="344" y="163" width="32" height="66" rx="13" fill="#383e44"/>
+
+      <!-- wrist assembly -->
+      <g>
+        <animateTransform attributeName="transform" type="rotate"
+          values="-24 360 152; 34 360 152; -38 360 152; 28 360 152; -24 360 152"
+          keyTimes="0; .24; .48; .74; 1" dur="6s" repeatCount="indefinite"/>
+
+        <circle cx="360" cy="152" r="35" fill="url(#joint)" stroke="#14191e" stroke-width="5"/>
+        <circle cx="360" cy="152" r="23" fill="#242a2f" stroke="#10151a" stroke-width="4"/>
+        <path d="M343 137 A23 23 0 0 1 374 134" fill="none" stroke="#7ad7ff" stroke-width="4" stroke-linecap="round" opacity=".9"/>
+
+        <!-- wrist neck -->
+        <rect x="343" y="99" width="34" height="53" rx="14" fill="url(#metal)" stroke="#151a1f" stroke-width="4"/>
+
+        <!-- gripper body -->
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+            values="8 360 99; -12 360 99; 10 360 99; -8 360 99; 8 360 99"
+            keyTimes="0; .24; .48; .74; 1" dur="6s" repeatCount="indefinite"/>
+
+          <rect x="327" y="73" width="66" height="31" rx="12" fill="url(#metal2)" stroke="#14191e" stroke-width="4"/>
+          <circle cx="345" cy="88" r="4" fill="#0d1216"/>
+          <circle cx="375" cy="88" r="4" fill="#0d1216"/>
+
+          <!-- fingers -->
+          <g>
+            <rect x="320" y="50" width="19" height="35" rx="8" fill="#30363c" stroke="#14191e" stroke-width="4">
+              <animate attributeName="x" values="320;315;320;314;320" dur="3s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="381" y="50" width="19" height="35" rx="8" fill="#30363c" stroke="#14191e" stroke-width="4">
+              <animate attributeName="x" values="381;386;381;387;381" dur="3s" repeatCount="indefinite"/>
+            </rect>
+          </g>
+
+          <!-- fingertips -->
+          <rect x="317" y="45" width="26" height="12" rx="6" fill="#1f252a" stroke="#11161a" stroke-width="3">
+            <animate attributeName="x" values="317;312;317;311;317" dur="3s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="377" y="45" width="26" height="12" rx="6" fill="#1f252a" stroke="#11161a" stroke-width="3">
+            <animate attributeName="x" values="377;382;377;383;377" dur="3s" repeatCount="indefinite"/>
+          </rect>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- tiny "dance" motion marks -->
+  <g fill="none" stroke="#7ad7ff" stroke-width="4" stroke-linecap="round" opacity=".78">
+    <path d="M495 120 q24 -18 42 -2" stroke-dasharray="28 14">
+      <animate attributeName="stroke-dashoffset" values="0;-84" dur="1.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".2;.85;.2" dur="1.4s" repeatCount="indefinite"/>
+    </path>
+    <path d="M214 179 q-22 20 -41 3" stroke-dasharray="24 14">
+      <animate attributeName="stroke-dashoffset" values="0;-76" dur="1.7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".15;.75;.15" dur="1.7s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Optional tiny status light -->
+  <circle cx="360" cy="412" r="5" fill="#7ad7ff">
+    <animate attributeName="opacity" values=".35;1;.35" dur="1.2s" repeatCount="indefinite"/>
+  </circle>
+</svg>
