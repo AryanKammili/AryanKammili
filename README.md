@@ -8,7 +8,7 @@
     <a href="RESUME">Resume</a> ·
     <a href="https://github.com/AryanKammili?tab=repositories">Projects</a> ·
     <a href="mailto:aryank@berkeley.edu">Email</a> ·
-    <a href="LINKEDIN">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/aryan-kammili-7b133327a/?isSelfProfile=true">LinkedIn</a>
   </b>
 </p>
 
@@ -39,7 +39,7 @@ closed-loop controls.
 
 **Java · Python · OpenCV · Robotics · Controls**
 
-[View project →](#)
+[View project →](https://github.com/AryanKammili?tab=repositories&q=&type=&language=java&sort=)
 
 </td>
 
